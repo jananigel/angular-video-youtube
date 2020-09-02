@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)},
-  { path: ':id', loadChildren: () => import('./modules/viewer/viewer.module').then(m => m.ViewerModule)},
+  { path: 'video/:id', loadChildren: () => import('./modules/viewer/viewer.module').then(m => m.ViewerModule)},
+  { path: 'collection', redirectTo: 'home'},
 ];
 
 @NgModule({
