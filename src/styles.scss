@@ -1,1 +1,10 @@
 /* Add application styles & imports to this file! */
+
+:root {
+  --main-font-color: #1f1f1f;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-font-color);
+}
