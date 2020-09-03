@@ -1,6 +1,10 @@
 <app-main-layout>
   <app-main-navigation></app-main-navigation>
   <div>
-    <a routerLink="/video/123id">link to video</a>
+    <ng-container *ngFor="let item of data?.items">
+      <img [src]="item.snippet.thumbnails.default.url">
+      <a routerLink="/video/123id" >{{ item.snippet.title }}</a>
+    </ng-container>
+    
   </div>
 </app-main-layout>

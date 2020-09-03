@@ -12,7 +12,7 @@ import { Video } from "../../../core/interface/video.interface";
 export class HomeListComponent implements OnInit {
 
   queryParameter = new VideoQueryParameter;
-  data: Video[];
+  data: Video;
 
   constructor(
     private readonly videoDataService: VideoDataService,

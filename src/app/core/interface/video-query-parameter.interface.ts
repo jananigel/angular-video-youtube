@@ -12,7 +12,7 @@ export class VideoQueryParameter implements IVideoQueryParameter {
 
   constructor(
     public key = 'AIzaSyAGfVARifTfizbS7NddtI4VzAc8gkncCAw',
-    public part = ['snippet'],
+    public part = ['snippet', 'contentDetails'],
     public chart = 'mostPopular',
     public maxResults = '10',
   ) {}

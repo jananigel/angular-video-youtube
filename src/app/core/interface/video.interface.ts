@@ -12,6 +12,7 @@ export interface VideoInfo {
   kind: string;
   snippet: Snippet;
   localized: Localized;
+  contentDetails: ContentDetail;
 }
 
 export interface PageInfo {
@@ -24,6 +25,7 @@ export interface Snippet {
   channelTitle: string;
   description: string;
   thumbnails: Thumbnails
+  title: string;
 }
 
 export interface Thumbnails {
@@ -43,4 +45,8 @@ export interface ThumbnailsInfo {
 export interface Localized {
   description: string;
   title: string;
+}
+
+export interface ContentDetail {
+  duration: string;
 }
