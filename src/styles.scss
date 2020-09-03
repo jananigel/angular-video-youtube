@@ -1,7 +1,11 @@
 /* Add application styles & imports to this file! */
 
+@import './styles/scroll-bar.scss';
+
 :root {
   --main-font-color: #1f1f1f;
+  --scroll-bar-color: #d3d3d3;
+  --scroll-bar-background: #b3b3b3;
 }
 
 a {

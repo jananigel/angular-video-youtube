@@ -1,0 +1,18 @@
+.main-scroll-bar::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.main-scroll-bar::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-color);
+  border-radius: 30px;
+}
+
+.main-scroll-bar::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background-color: var(--scroll-bar-background);
+  background-clip: content-box;
+  border: 3px solid transparent;
+}
