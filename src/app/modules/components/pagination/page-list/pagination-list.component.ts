@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-const APPEAR_PAGE = 5;
+const APPEAR_PAGE = 10;
 
 @Component({
   selector: 'app-pagination-list',
@@ -12,11 +12,11 @@ export class PaginationListComponent implements OnInit {
   pages: number[] = [];
   appearPages: number[] = [];
   currentPage = 1;
-  totalPage = 0;
+  totalCount = 0;
 
   @Input() prePageCount = APPEAR_PAGE;
-  @Input('totalPage') set setTotalPages(total: number) {
-    this.totalPage = total;
+  @Input('totalCount') set setTotalCount(count: number) {
+    this.totalCount = count;
     this.initPages();
     this.appearPageHandler();
     this.appearPages = Array.from(this.pages).slice(0, this.prePageCount);
@@ -55,7 +55,8 @@ export class PaginationListComponent implements OnInit {
   }
 
   private initPages() {
-    for (let i = 0; i < this.totalPage; ++ i) {
+    const page = Math.ceil(this.totalCount / this.prePageCount);
+    for (let i = 0; i < page; ++ i) {
       this.pages.push(i + 1);
     }
   }
