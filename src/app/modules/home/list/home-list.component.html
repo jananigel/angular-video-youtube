@@ -2,8 +2,12 @@
   <app-main-navigation></app-main-navigation>
   <div>
     <ng-container *ngFor="let item of data?.items">
-      <img [src]="item.snippet.thumbnails.default.url">
-      <a routerLink="/video/123id" >{{ item.snippet.title }}</a>
+      <div class="content">
+        <div class="card">
+          <img [src]="item.snippet.thumbnails.default.url">
+          <a routerLink="/video/123id" >{{ item.snippet.title }}</a>
+        </div>
+      </div>
     </ng-container>
     <app-pagination-list [totalCount]="data?.items.length"></app-pagination-list>
   </div>
