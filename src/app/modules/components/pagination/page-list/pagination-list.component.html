@@ -1,0 +1,7 @@
+<div class="first-page btn" (click)="onFirstPageClick()">{{ pages[0] }}</div>
+<div class="prev btn" (click)="onPrevClick()" [class.disabled]="currentPage - 1 <= 0"><</div>
+<div class="pages flex">
+  <div class="page btn" *ngFor="let page of appearPages;" (click)="onPageClick(page)" [class.active]="currentPage === page">{{ page }}</div>
+</div>
+<div class="next btn" (click)="onNextClick()" [class.disabled]="currentPage >= pages.length">></div>
+<div class="last-page btn" (click)="onLastPageClick()">{{ pages.length }}</div>

@@ -5,6 +5,6 @@
       <img [src]="item.snippet.thumbnails.default.url">
       <a routerLink="/video/123id" >{{ item.snippet.title }}</a>
     </ng-container>
-    
+    <app-pagination-list [totalPage]="data?.items.length"></app-pagination-list>
   </div>
 </app-main-layout>

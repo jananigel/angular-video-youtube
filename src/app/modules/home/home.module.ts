@@ -7,15 +7,16 @@ import { HomeListComponent } from './list/home-list.component';
 import { VideoDataService } from '../../service/data/video.data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { PaginationListModule } from '../components/pagination/pagination-list.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
-    // HttpClientModule,
     LayoutModule,
     MainNavigatinModule,
+    PaginationListModule,
   ],
   declarations: [HomeListComponent],
   providers: [
