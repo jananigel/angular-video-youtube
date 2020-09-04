@@ -9,6 +9,6 @@
         </div>
       </div>
     </ng-container>
-    <app-pagination-list [totalCount]="data?.items.length"></app-pagination-list>
+    <app-pagination-list [totalCount]="data?.pageInfo.totalResults" [prePageCount]="5"></app-pagination-list>
   </div>
 </app-main-layout>
