@@ -4,14 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewerComponent } from './viewer/viewer.component';
 
 const routes: Routes = [
-  { path: '', 
+  {
+    path: '', 
     pathMatch: 'full',
     children: [
-    {
-      path: '',
-      component: ViewerComponent,
-    }
-  ]
+      {
+        path: '',
+        component: ViewerComponent,
+      }
+    ]
   },
 ];
 
