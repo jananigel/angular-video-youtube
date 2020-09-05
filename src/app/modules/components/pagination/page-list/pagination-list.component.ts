@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-const APPEAR_PAGE = 10;
+const PRE_PAGE_COUNT = 12;
+const PAGINATION_COUNT = 5;
 
 @Component({
   selector: 'app-pagination-list',
@@ -11,16 +12,19 @@ export class PaginationListComponent implements OnInit {
 
   pages: number[] = [];
   appearPages: number[] = [];
-  currentPage = 1;
   totalCount = 0;
 
-  @Input() prePageCount = APPEAR_PAGE;
+  @Input() prePageCount = PRE_PAGE_COUNT;
+  @Input() paginationCount = PAGINATION_COUNT;
+  @Input() currentPage = 1;
   @Input('totalCount') set setTotalCount(count: number) {
     this.totalCount = count;
     this.initPages();
     this.appearPageHandler();
     this.appearPages = Array.from(this.pages).slice(0, this.prePageCount);
   }
+
+  @Output() pageChange = new EventEmitter<number>();
 
   constructor() {}
 
@@ -65,6 +69,7 @@ export class PaginationListComponent implements OnInit {
     const appearPageLength = this.appearPages.length - 1;
     const lastAppearPage = this.appearPages[appearPageLength];
     const firstAppearPage = this.appearPages[1];
+    this.pageChange.emit(this.currentPage);
 
     if (this.currentPage >= this.pages[this.pages.length - 1]) {
       this.appearPages = Array.from(this.pages).slice(this.pages.length - this.prePageCount + 1, this.pages.length);

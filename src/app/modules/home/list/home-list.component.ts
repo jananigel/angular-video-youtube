@@ -4,6 +4,9 @@ import { VideoQueryParameter } from "../../../core/interface/video-query-paramet
 import { VideoDataService } from '../../../service/data/video.data.service';
 import { Video } from "../../../core/interface/video.interface";
 
+const PER_PAGE_ITEM_COUNT = 12;
+const DEFAULT_CURRENT_PAGE = 1;
+
 @Component({
   selector: 'app-home-list',
   templateUrl: './home-list.component.html',
@@ -13,6 +16,8 @@ export class HomeListComponent implements OnInit {
 
   queryParameter = new VideoQueryParameter;
   data: Video;
+  currentPage = DEFAULT_CURRENT_PAGE;
+  perPageItemCount = PER_PAGE_ITEM_COUNT;
 
   constructor(
     private readonly videoDataService: VideoDataService,
@@ -25,5 +30,9 @@ export class HomeListComponent implements OnInit {
       this.data = data;
       console.log('data = ', this.data);
     })
+  }
+
+  onPageChange(page: number) {
+    this.currentPage = page;
   }
 }

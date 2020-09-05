@@ -6,6 +6,7 @@ export interface IVideoQueryParameter {
   maxResults: string;
   key: string;
   pageToken?: string;
+  order?: string;
 }
 
 export class VideoQueryParameter implements IVideoQueryParameter {
@@ -14,7 +15,8 @@ export class VideoQueryParameter implements IVideoQueryParameter {
     public key = 'AIzaSyAGfVARifTfizbS7NddtI4VzAc8gkncCAw',
     public part = ['snippet', 'contentDetails'],
     public chart = 'mostPopular',
-    public maxResults = '10',
+    public maxResults = '50',
+    public order = 'viewCount',
   ) {}
 
 }

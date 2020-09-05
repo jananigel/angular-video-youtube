@@ -8,6 +8,7 @@ import { VideoDataService } from '../../service/data/video.data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { PaginationListModule } from '../components/pagination/pagination-list.module';
+import { PipesShareModule } from '../../shared/pipes/pipes.share.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { PaginationListModule } from '../components/pagination/pagination-list.m
     LayoutModule,
     MainNavigatinModule,
     PaginationListModule,
+    PipesShareModule,
   ],
   declarations: [HomeListComponent],
   providers: [

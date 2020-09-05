@@ -1,7 +1,7 @@
 <app-main-layout>
   <app-main-navigation></app-main-navigation>
   <div>
-    <ng-container *ngFor="let item of data?.items">
+    <ng-container *ngFor="let item of (data?.items | paginationHandler:currentPage:perPageItemCount)">
       <div class="content">
         <div class="card">
           <img [src]="item.snippet.thumbnails.default.url">
@@ -9,6 +9,6 @@
         </div>
       </div>
     </ng-container>
-    <app-pagination-list [totalCount]="data?.pageInfo.totalResults" [prePageCount]="5"></app-pagination-list>
+    <app-pagination-list [totalCount]="data?.items.length" [prePageCount]="perPageItemCount" [currentPage]="currentPage" (pageChange)="onPageChange($event)"></app-pagination-list>
   </div>
 </app-main-layout>
