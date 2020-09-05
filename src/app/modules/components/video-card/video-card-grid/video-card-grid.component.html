@@ -4,7 +4,7 @@
       <!-- TODO: can use css background with directive to implement lazy load image -->
       <img [src]="data?.snippet.thumbnails.default.url">
       <span class="duration">{{ data.contentDetails.duration | iso8601 }}</span>
-      <div class="collect active"></div>
+      <div class="collect" [class.active]="isCollected" (click)="onCollectionClick()"></div>
     </div>
     <div class="info">
       <!-- <a routerLink="/video/123id" >{{ data.snippet.title }}</a> -->

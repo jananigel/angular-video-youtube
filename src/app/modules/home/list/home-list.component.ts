@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { VideoQueryParameter } from "../../../core/interface/video-query-parameter.interface";
-// import { VideoDataService } from 'src/app/service/data/video.data.service';
 import { VideoDataService } from '../../../service/data/video.data.service';
-import { Video } from "../../../core/interface/video.interface";
+import { Video, VideoInfo } from "../../../core/interface/video.interface";
+import { COLLECTIONS } from '../../../../../core/const/local-storage';
 
 const PER_PAGE_ITEM_COUNT = 12;
 const DEFAULT_CURRENT_PAGE = 1;
@@ -35,4 +35,16 @@ export class HomeListComponent implements OnInit {
   onPageChange(page: number) {
     this.currentPage = page;
   }
+
+  onCollectClick(video: VideoInfo) {
+    const hasCollection = !!localStorage.getItem(COLLECTIONS);
+    if (hasCollection) {
+      let collections: VideoInfo[] = JSON.parse(localStorage.getItem(COLLECTIONS));
+      const isDuplicate = collections.some(collection => collection.id === video.id);
+      isDuplicate ? collections = collections.filter(collection => collection.id !== video.id) : collections.push(video);
+      localStorage.setItem(COLLECTIONS, JSON.stringify(collections));
+      return;
+    }
+    localStorage.setItem(COLLECTIONS, JSON.stringify([video]));
+  } 
 }
