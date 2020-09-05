@@ -1,0 +1,16 @@
+    
+@mixin setLineClamp($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.line-clamp-1 {
+  @include setLineClamp(1);
+}
+
+.line-clamp-2 {
+  @include setLineClamp(2);
+}

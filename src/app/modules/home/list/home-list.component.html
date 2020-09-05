@@ -1,14 +1,11 @@
 <app-main-layout>
   <app-main-navigation></app-main-navigation>
-  <div>
-    <ng-container *ngFor="let item of (data?.items | paginationHandler:currentPage:perPageItemCount)">
-      <div class="content">
-        <div class="card">
-          <img [src]="item.snippet.thumbnails.default.url">
-          <a routerLink="/video/123id" >{{ item.snippet.title }}</a>
-        </div>
-      </div>
-    </ng-container>
+  <div class="card-content">
+    <div class="card-list">
+      <ng-container *ngFor="let item of (data?.items | paginationHandler:currentPage:perPageItemCount)">
+        <app-video-card-grid [data]="item"></app-video-card-grid>
+      </ng-container>
+    </div>
     <app-pagination-list [totalCount]="data?.items.length" [prePageCount]="perPageItemCount" [currentPage]="currentPage" (pageChange)="onPageChange($event)"></app-pagination-list>
   </div>
 </app-main-layout>

@@ -1,12 +1,21 @@
 /* Add application styles & imports to this file! */
 
 @import './styles/scroll-bar.scss';
+@import './styles/line-clamp.scss';
+@import './styles/card-list.scss';
+@import './styles/media-query.scss';
 
 :root {
   --main-font-color: #1f1f1f;
   --scroll-bar-color: #d3d3d3;
   --scroll-bar-background: #b3b3b3;
   --main-color: #ff4646;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {

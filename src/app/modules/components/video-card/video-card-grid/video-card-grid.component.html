@@ -1,0 +1,15 @@
+<!-- <div class="content"> -->
+  <!-- <div class="card"> -->
+    <div class="img-area">
+      <!-- TODO: can use css background with directive to implement lazy load image -->
+      <img [src]="data?.snippet.thumbnails.default.url">
+      <span class="duration">{{ data.contentDetails.duration | iso8601 }}</span>
+      <div class="collect active"></div>
+    </div>
+    <div class="info">
+      <!-- <a routerLink="/video/123id" >{{ data.snippet.title }}</a> -->
+      <h4 class="line-clamp-2">{{ data.snippet.title }}</h4>
+      <h5 class="line-clamp-2">{{ data.snippet.description }}</h5>
+    </div>
+  <!-- </div> -->
+<!-- </div> -->

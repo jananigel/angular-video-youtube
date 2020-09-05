@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { PaginationListModule } from '../components/pagination/pagination-list.module';
 import { PipesShareModule } from '../../shared/pipes/pipes.share.module';
+import { VideoCardShareModule } from '../components/video-card/video-card.share.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { PipesShareModule } from '../../shared/pipes/pipes.share.module';
     MainNavigatinModule,
     PaginationListModule,
     PipesShareModule,
+    VideoCardShareModule
   ],
   declarations: [HomeListComponent],
   providers: [
