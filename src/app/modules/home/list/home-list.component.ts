@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { VideoQueryParameter } from "../../../core/interface/video-query-parameter.interface";
 import { VideoDataService } from '../../../service/data/video.data.service';
 import { Video, VideoInfo } from "../../../core/interface/video.interface";
-import { COLLECTIONS } from '../../../../../core/const/local-storage';
+import { COLLECTIONS } from '../../../core/const/local-storage';
 
 const PER_PAGE_ITEM_COUNT = 12;
 const DEFAULT_CURRENT_PAGE = 1;

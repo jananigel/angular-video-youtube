@@ -20,7 +20,7 @@ import { VideoCardShareModule } from '../components/video-card/video-card.share.
     MainNavigatinModule,
     PaginationListModule,
     PipesShareModule,
-    VideoCardShareModule
+    VideoCardShareModule,
   ],
   declarations: [HomeListComponent],
   providers: [
