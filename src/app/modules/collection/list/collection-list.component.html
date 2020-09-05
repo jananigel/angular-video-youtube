@@ -3,7 +3,7 @@
   <div class="card-content">
     <div class="card-list">
       <ng-container *ngFor="let item of (data | paginationHandler:currentPage:perPageItemCount)">
-        <app-video-card-grid [data]="item" (collect)="onCollectClick($event)"></app-video-card-grid>
+        <app-video-card-grid [data]="item" (collect)="onCollectClick($event)" (cardClick)="onCardClick($event)"></app-video-card-grid>
       </ng-container>
     </div>
     <app-pagination-list [totalCount]="data?.length" [prePageCount]="perPageItemCount" [currentPage]="currentPage" (pageChange)="onPageChange($event)"></app-pagination-list>

@@ -3,6 +3,7 @@ import { VideoQueryParameter } from "../../../core/interface/video-query-paramet
 import { VideoDataService } from '../../../service/data/video.data.service';
 import { Video, VideoInfo } from "../../../core/interface/video.interface";
 import { COLLECTIONS } from '../../../core/const/local-storage';
+import { Router } from "@angular/router";
 
 const PER_PAGE_ITEM_COUNT = 12;
 const DEFAULT_CURRENT_PAGE = 1;
@@ -21,6 +22,7 @@ export class HomeListComponent implements OnInit {
 
   constructor(
     private readonly videoDataService: VideoDataService,
+    private readonly router: Router,
   ) {
     console.log('home data = ', this.queryParameter);
   }
@@ -46,5 +48,9 @@ export class HomeListComponent implements OnInit {
       return;
     }
     localStorage.setItem(COLLECTIONS, JSON.stringify([video]));
-  } 
+  }
+
+  onCardClick(id: string) {
+    this.router.navigate(['./video', id]);
+  }
 }

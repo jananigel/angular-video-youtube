@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, HostListener } from "@angular/core";
 import { VideoInfo } from "../../../../core/interface/video.interface";
 import { COLLECTIONS } from '../../../../core/const/local-storage';
 
@@ -23,12 +23,19 @@ export class VideoCardGridComponent implements OnInit {
   }
 
   @Output() collect = new EventEmitter<VideoInfo>();
+  @Output() cardClick = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(private readonly elementRef: ElementRef) {}
 
   ngOnInit() {}
 
-  onCollectionClick() {
+  @HostListener('click')
+  onCardClick() {
+    this.cardClick.emit(this.data.id);
+  }
+
+  onCollectionClick(event: Event) {
+    event.stopPropagation();
     this.isCollected = !this.isCollected;
     this.collect.emit(this.data);
   }
