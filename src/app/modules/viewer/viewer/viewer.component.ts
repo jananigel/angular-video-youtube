@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { VideoDataService } from "../../../service/data/video.data.service";
 import { PlayQueryParameter } from "../../../core/interface/video-query-parameter.interface";
+import * as videojs from 'video.js';
 
 @Component({
   selector: 'app-viewer',
@@ -17,6 +18,7 @@ export class ViewerComponent implements OnInit {
     private readonly dataService: VideoDataService,
   ) {
     console.log('viewer id = ', this.route.snapshot.params.id);
+    console.log('videojs = ', videojs);
   }
 
   ngOnInit() {
