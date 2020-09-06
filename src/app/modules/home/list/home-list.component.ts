@@ -25,14 +25,14 @@ export class HomeListComponent implements OnInit {
     private readonly videoDataService: VideoDataService,
     private readonly router: Router,
   ) {
-    console.log('home data = ', this.queryParameter);
+    // console.log('home data = ', this.queryParameter);
   }
 
   ngOnInit() {
     this.videoDataService.getList(this.queryParameter).subscribe(data => {
       this.isLoading = false;
       this.data = data;
-      console.log('data = ', this.data);
+      // console.log('data = ', this.data);
     })
   }
 

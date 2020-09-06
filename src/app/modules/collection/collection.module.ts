@@ -7,6 +7,7 @@ import { CollectionListComponent } from './list/collection-list.component';
 import { VideoCardShareModule } from '../components/video-card/video-card.share.module';
 import { PipesShareModule } from '../../shared/pipes/pipes.share.module';
 import { PaginationListModule } from '../components/pagination/pagination-list.module';
+import { CommonShareComponentModule } from '../components/common/common-share-component.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { PaginationListModule } from '../components/pagination/pagination-list.m
     PaginationListModule,
     PipesShareModule,
     VideoCardShareModule,
+    CommonShareComponentModule,
   ],
   declarations: [CollectionListComponent],
 })

@@ -10,7 +10,7 @@ import { LoadingComponent } from './loading/loading.component';
   declarations: [
     LoadingComponent
   ],
-  providers: [
+  exports: [
     LoadingComponent,
   ]
 })

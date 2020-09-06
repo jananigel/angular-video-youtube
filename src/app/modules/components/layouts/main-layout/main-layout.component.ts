@@ -8,6 +8,6 @@ import { Component } from "@angular/core";
 export class MainLayoutComponent {
 
   constructor() {
-    console.log('main layout');
+    // console.log('main layout');
   }
 }

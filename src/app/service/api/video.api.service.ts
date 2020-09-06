@@ -22,7 +22,6 @@ export class VideoApiService {
 
   playVideo(queryParamter: PlayQueryParameter): Observable<any> {
     let queryParams = new HttpParams();
-    console.log(' ddd = ', queryParamter);
     queryParams = this.getQueryParams(queryParamter);
     return this.httpClient.get(END_POINT, {params: queryParams});
   }

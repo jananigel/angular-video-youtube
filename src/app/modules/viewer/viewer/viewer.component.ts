@@ -50,7 +50,7 @@ export class ViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {
     this.initVideoData();
     this.initList();
-    console.log('this.list = ', this.list);
+    // console.log('this.list = ', this.list);
   }
 
   ngAfterViewInit() {
@@ -72,14 +72,14 @@ export class ViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     const videoId = this.route.snapshot.params.id;
     this.playParameter.id = videoId;
     this.dataService.getPlayVideo(this.playParameter).subscribe(res => {
-      console.log('res = ', res);
+      // console.log('res = ', res);
       this.data = res.items[0];
     });
   }
 
   private initVideoJS() {
     this.player = videojs(this.videoEle.nativeElement, this.videoConfig, function onPlayerReady() {
-      console.log('onPlayerReady', this);
+      // console.log('onPlayerReady', this);
     });
   }
 

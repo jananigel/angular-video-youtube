@@ -21,7 +21,7 @@ export class CollectionListComponent implements OnInit {
   constructor(
     private readonly router: Router,
   ) {
-    console.log('collection');
+    // console.log('collection');
   }
 
   ngOnInit() {

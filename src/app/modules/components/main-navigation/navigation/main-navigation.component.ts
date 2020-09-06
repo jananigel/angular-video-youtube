@@ -8,6 +8,6 @@ import { Component } from "@angular/core";
 export class MainNavigationComponent {
 
   constructor() {
-    console.log('main navigation');
+    // console.log('main navigation');
   }
 }
