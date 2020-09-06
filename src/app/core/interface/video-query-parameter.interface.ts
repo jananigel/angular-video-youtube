@@ -28,6 +28,6 @@ export class PlayQueryParameter implements IVideo {
   constructor(
     public key = 'AIzaSyAGfVARifTfizbS7NddtI4VzAc8gkncCAw',
     public id = '',
-    public part = ['player'],
+    public part = ['player', 'snippet'],
   ) {}
 }

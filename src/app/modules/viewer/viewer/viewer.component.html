@@ -1,10 +1,32 @@
 <app-main-layout>
   <app-main-navigation></app-main-navigation>
-  <div>
-    Viewer
-    <video src="https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8"></video>
-    <video width="600" height="400" controls>
-        <source src="https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8" type="application/x-mpegURL">
-    </video>
+  <div class="content">
+    <div class="left-side padding-20">
+      <video
+        #videoEle
+        class="video-js vjs-default-skin vjs-big-play-centered vjs-matrix vjs-16-9" 
+        controls preload="auto"
+        data-setup="{}">
+      </video>
+      <h4>{{ data?.snippet.title }}</h4>
+      <h5>{{ data?.snippet.description }}</h5>
+    </div>
+    <div class="right-side padding-20">
+      <ng-container *ngIf="list; else emptyList">
+        <div class="card" *ngFor="let item of list" (click)="onCardClick(item)">
+          <div class="img-area">
+            <img [src]="item?.snippet.thumbnails.default.url" alt="">
+          </div>
+          <div class="info">
+            <h4 class="line-clamp-1">{{ item.snippet.title }}</h4>
+            <h5 class="line-clamp-1">{{ item.snippet.description }}</h5>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #emptyList>
+        <h4>Your collection is empty</h4>
+      </ng-template>
+    </div>
   </div>
 </app-main-layout>
