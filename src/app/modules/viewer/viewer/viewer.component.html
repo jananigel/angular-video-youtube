@@ -14,7 +14,7 @@
       <h5>{{ data?.snippet.description }}</h5>
     </div>
     <div class="right-side padding-20">
-      <ng-container *ngIf="list; else emptyList">
+      <ng-container *ngIf="list && list.length; else emptyList">
         <div class="card" *ngFor="let item of list" (click)="onCardClick(item)">
           <div class="img-area">
             <img [src]="item?.snippet.thumbnails.default.url" alt="">
@@ -27,7 +27,7 @@
       </ng-container>
 
       <ng-template #emptyList>
-        <h4>Your collection is empty</h4>
+        <h4 class="empty-message">Your collection is empty</h4>
       </ng-template>
     </div>
   </div>
