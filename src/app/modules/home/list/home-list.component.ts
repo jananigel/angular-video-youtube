@@ -19,6 +19,7 @@ export class HomeListComponent implements OnInit {
   data: Video;
   currentPage = DEFAULT_CURRENT_PAGE;
   perPageItemCount = PER_PAGE_ITEM_COUNT;
+  isLoading = true;
 
   constructor(
     private readonly videoDataService: VideoDataService,
@@ -29,6 +30,7 @@ export class HomeListComponent implements OnInit {
 
   ngOnInit() {
     this.videoDataService.getList(this.queryParameter).subscribe(data => {
+      this.isLoading = false;
       this.data = data;
       console.log('data = ', this.data);
     })

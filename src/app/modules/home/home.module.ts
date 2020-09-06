@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PaginationListModule } from '../components/pagination/pagination-list.module';
 import { PipesShareModule } from '../../shared/pipes/pipes.share.module';
 import { VideoCardShareModule } from '../components/video-card/video-card.share.module';
+import { CommonShareComponentModule } from '../components/common/common-share-component.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { VideoCardShareModule } from '../components/video-card/video-card.share.
     PaginationListModule,
     PipesShareModule,
     VideoCardShareModule,
+    CommonShareComponentModule,
   ],
   declarations: [HomeListComponent],
   providers: [

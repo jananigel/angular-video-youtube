@@ -1,6 +1,7 @@
 <app-main-layout>
   <app-main-navigation></app-main-navigation>
-  <div class="card-content">
+  <app-loading *ngIf="isLoading"></app-loading>
+  <div class="card-content" *ngIf="!isLoading">
     <div class="card-list">
       <ng-container *ngFor="let item of (data?.items | paginationHandler:currentPage:perPageItemCount)">
         <app-video-card-grid [data]="item" (collect)="onCollectClick($event)" (cardClick)="onCardClick($event)"></app-video-card-grid>
